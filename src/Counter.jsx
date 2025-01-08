@@ -1,10 +1,21 @@
 import {useState} from 'react';
-
+function init(){
+    console.log("init was executed")
+    return Math.random()
+}
 export default function Counter() {
-    let [count,setCount] = useState(0);
+    let [count,setCount] = useState(init);
+    console.log("Componenet was re rendered");
+    
     function increase(){
-        setCount(count+1);
-        console.log(count);
+        setCount((currCount)=>{
+            return currCount +1;
+        });
+        setCount((currCount)=>{
+            return currCount +1;
+        });
+       
+       
     
     }
     return (
